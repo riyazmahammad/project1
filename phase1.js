@@ -24,6 +24,8 @@ function validate()
    let SubjectValue = Subject.value.trim()
    let textareaValue = textarea.value.trim()
    let selectedOption = selectElement.options[selectElement.selectedIndex];
+   const code = /^[a-zA-Z ]+$/;
+   const codea = /^[0-9]+$/;
     //User name check
 
     if(nameValue==='' ){
@@ -32,7 +34,7 @@ function validate()
     else if(nameValue.length<3){
         setError(username,'User name should be minimum 3 characters.')
     }
-    else if(nameValue.search(/^[A-Za-z]+$/){
+    else if(!code.test(nameValue)){
 
     setError(username,'Please enter a valid name.')
      }
@@ -60,6 +62,9 @@ function validate()
         setError(phone,'Please enter 10 digit phone number.') 
     }
     else if(phoneValue.length>10){
+        setError(phone,'Please enter valid number.') 
+    }
+    else if(!codea.test(phoneValue)){
         setError(phone,'Please enter valid number.') 
     }
 	else {
@@ -105,7 +110,7 @@ else if(textareaValue.length<3){
 		p.style.visibility='hidden';
     }
     function emailCheck(input){
-        let emailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+        let emailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{3,3}$/
         let valid = emailReg.test(input)       
         return valid
     }
@@ -125,7 +130,7 @@ Comment:textareaValue,
 userData.push(user);		
 	
 console.log(userData);
-	
+
 };
 
 } 
