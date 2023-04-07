@@ -1,7 +1,7 @@
 *{margin:0;
     padding:0;}
   body{
-    background-image:url("C:\\Users\\riyazm\\Pictures\\Saved Pictures\\wp9764014.jpg");
+    background-image:url("C:\\Users\\riyazm\\Pictures\\Saved Pictures\\wp9764014 (2).jpg");
   background-repeat:no-repeat;
   background-position:center center;
   background-size:cover;
@@ -13,7 +13,7 @@
    height:520px;
   background-color:white;
   color:black;
-  margin:10px 900px 0px 300px;
+  margin:10px 800px 0px 700px;
   padding:40px;
    border-radius: 10px;
    box-shadow: 5px 10px 30px #111f033d;
@@ -87,6 +87,10 @@ select:focus {
     border-color: rgb(111, 111, 233); /* border color when input is focused */
   }
   .star{color:red;}
-  
+  #textarea{
+resize: none;
+
+  }
+
 
   
