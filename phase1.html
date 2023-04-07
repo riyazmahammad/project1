@@ -1,134 +1,60 @@
+<html>
+<head>
+<title>sign up </title>
+<link rel="stylesheet" href="Phase-1(form).css">
+</head>
+<body >
+  <div class="title">
+<form  class="qwe" id="form">
 
-var userData=[];
+<h2 >Register Here</h2><br>
 
-const form = document.getElementById("form")
-const username = document.getElementById("username")
-const email = document.getElementById("email")
-const phone= document.getElementById("phone")
-const Subject= document.getElementById("Subject")
-const textarea= document.getElementById("textarea")	
-const selectElement = document.querySelector('select');
+<div class="input12">
+<label for="username">Name:<span class="star">*</span></label><br>
+<input type="text" placeholder=username id="username" class="q" >
+<p class="color">error message</p> 
+ </div>
+ 
+ <div class="input12">
+<label for="email">Email:<span class="star">*</span></label><br>
+<input type="email" placeholder="abc@gmail.com" id="email" class="q">
+<p class="color">error message</p> 
+ </div>
 
+  <div class="input12">
+  
+<label for="phonenumber">Phone Number:<span class="star">*</span></label>
+<input type="text" placeholder="phone number" id="phone" class="q">
+<p class="color">error message</p> 
+ </div>
 
-form.addEventListener("submit", function(event){
+    <div class="input12">
+    <label for="Subject">Subject:<span class="star">*</span></label>
+    <input type="text" placeholder="Subject" id="Subject" class="q">
+    <p class="color">error message</p> 
+     </div><br>
 
-    event.preventDefault();
-    validate();
-	
-});
+     <div  class="input12">
+        <label for="workflow">Select Workflow:<span class="star">*</span></label>
+        <select class="workflow" name="workflow" required >
+          <option value="">--  Please Select  --</option>
+          <option value="assign">Assign Reviews</option>
+          <option value="approve">Approve Reviews</option>
+          <option value="delegate">Delegate Reviews</option>
+        </select>
+        </div><br>
 
-function validate()
-{
-    let nameValue = username.value.trim()
-	let emailValue = email.value.trim()
-   let phoneValue = phone.value.trim()
-   let SubjectValue = Subject.value.trim()
-   let textareaValue = textarea.value.trim()
-   let selectedOption = selectElement.options[selectElement.selectedIndex];
-    //User name check
-
-    if(nameValue==='' ){
-        setError(username,'User name cannot be empty.')
-    }
-    else if(nameValue.length<3){
-        setError(username,'User name should be minimum 3 characters.')
-    }
-    else if(nameValue.search(/^[A-Za-z]+$/){
-
-    setError(username,'Please enter a valid name.')
-     }
-    else{        
-        setSuccesss(username,'User successful.')
-    }
-    //email check :
-    if(emailValue===''){
-        setError(email,'E-mail cannot be empty.')
-    }  
-    else if(!emailCheck(emailValue)){
-        setError(email,'Enter valid E-mail Id')
-    }
-    else{        
-        setSuccesss(email)
-    }
-
-     //phone number check :
-
-     if(phoneValue==""){
-         
-        setError(phone,'Please enter phone number.')        
-    }
-    else if(phoneValue.length<10){
-        setError(phone,'Please enter 10 digit phone number.') 
-    }
-    else if(phoneValue.length>10){
-        setError(phone,'Please enter valid number.') 
-    }
-	else {
-	setSuccesss(phone)
-   
-	}
+     <div class="input12">
+        <label >Comments:<span class="star">*</span></label>
+        <textarea placeholder="Comments......" rows="2" cols="18" id="textarea" class="qa" maxlength="150"></textarea>
+        <p class="color">error message</p>
+      </div><br>
+        
     
-    //Subject check :
-    if(SubjectValue==""){
-         
-        setError(Subject,'Please enter subject.')        
-    }
-    else if(SubjectValue.length<3){
-        setError(Subject,'Please enter min 3 characters.') 
-    }
-    else if (SubjectValue.search(/[a-z,0-9,A-Z,@]/)){
-        setError(Subject,'Please enter alphanumaric.')
-    
-    }
-   else{
-        setSuccesss(Subject) 
-    }
-  //comment check:
-  if(textareaValue==""){
-         
-    setError(textarea,'Please enter comment.')        
-}
-else if(textareaValue.length<3){
-    setError(textarea,'Please enter min 3 characters.') 
-}else{
-    setSuccesss(textarea) 
-}
-   
-    function setError(input,message){
-        let parent = input.parentElement;
-        let p = parent.querySelector('p')
-        p.innerText = message
-       p.style.visibility='visible';
-    }
-    function setSuccesss(input,message){
-        let parent = input.parentElement;
-		let p = parent.querySelector('p')
-		p.style.visibility='hidden';
-    }
-    function emailCheck(input){
-        let emailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-        let valid = emailReg.test(input)       
-        return valid
-    }
 
-    
-	if( nameValue != "" && nameValue.length>=3 && emailValue !="" && phoneValue !="" && phoneValue.length==10 && SubjectValue!="" && SubjectValue.length>3 && textareaValue!="" && textareaValue.length>3)
-	{
-		window.alert("*Registration Successful*");
-	let user={
-username:nameValue,
-email:emailValue,
-phonenumber:phoneValue,
-selectedOption:selectedOption.value,
-Subject:SubjectValue,
-Comment:textareaValue,
-};
-userData.push(user);		
-	
-console.log(userData);
-	
-};
-
-} 
-
-
+<button type="submit" id="submit" class="submit1" >Submit</button>
+<script src="Phase-1(form).js"></script>
+</form>
+</div>
+</body>
+</html>
