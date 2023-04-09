@@ -1,6 +1,6 @@
 var userData=[];
 
-const form = document.getElementById("form")
+
 const username = document.getElementById("username")
 const email = document.getElementById("email")
 const phone= document.getElementById("phone")
@@ -61,9 +61,6 @@ function validate()
     else if(phoneValue.length<10){
         setError(phone,'Please enter 10 digit phone number.') 
     }
-    else if(phoneValue.length>10){
-        setError(phone,'Please enter valid number.') 
-    }
     else if(!codea.test(phoneValue)){
         setError(phone,'Please enter valid number.') 
     }
@@ -116,9 +113,9 @@ else if(textareaValue.length<3){
     }
 
     
-	if( nameValue != "" && nameValue.length>=3 && emailValue !="" && phoneValue !="" && phoneValue.length==10 && SubjectValue!="" && SubjectValue.length>3 && textareaValue!="" && textareaValue.length>3)
+	if( nameValue != "" && nameValue.length>=3 && code.test(nameValue) && emailValue !="" && emailCheck(emailValue) && codea.test(phoneValue)  && phoneValue !="" && phoneValue.length==10  && SubjectValue!="" && SubjectValue.length>3 && textareaValue!="" && textareaValue.length>3)
 	{
-		window.alert("*Registration Successful*");
+		const form = document.getElementById("form").reset();
 	let user={
 username:nameValue,
 email:emailValue,
@@ -128,9 +125,9 @@ Subject:SubjectValue,
 Comment:textareaValue,
 };
 userData.push(user);		
-	
-console.log(userData);
 
+console.log(userData);
+window.alert("*Registration Successful*");
 };
 
 } 
