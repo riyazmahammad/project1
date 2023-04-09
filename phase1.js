@@ -6,7 +6,7 @@ const email = document.getElementById("email")
 const phone= document.getElementById("phone")
 const Subject= document.getElementById("Subject")
 const textarea= document.getElementById("textarea")	
-const selectElement = document.querySelector('select');
+const selectElement = document.querySelector("select");
 
 
 form.addEventListener("submit", function(event){
